@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hassan Ahmed Alsawak - Digital Presence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); /* Soft blue gradient */
+      --card-bg: #ffffff;
+      --text-color-dark: #222222;
+      --text-color-light: #555555;
+      --shadow-deep: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --border-radius-xl: 20px;
+      --button-border-radius-md: 10px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--primary-gradient);
+      text-align: center;
+      padding: 30px 15px;
+      line-height: 1.6;
+      color: var(--text-color-dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      max-width: 500px;
+      width: 100%;
+      margin: auto;
+      background: var(--card-bg);
+      padding: 35px;
+      border-radius: var(--border-radius-xl);
+      box-shadow: var(--shadow-deep);
+      box-sizing: border-box;
+      animation: fadeIn 1s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    img {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 25px;
+      border: 5px solid #ffffff; /* White border for emphasis */
+      box-shadow: 0 0 0 5px rgba(0, 128, 255, 0.1); /* Subtle blue halo effect */
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      color: var(--text-color-dark);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .bio-line {
+      margin: 6px 0;
+      color: var(--text-color-light);
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .link-button {
+      display: block;
+      margin: 20px auto;
+      padding: 16px 25px;
+      width: 90%;
+      max-width: 400px;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: var(--button-border-radius-md);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      font-size: 17px;
+      position: relative;
+      overflow: hidden; /* For hover effects */
+    }
+
+    .link-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2); /* White overlay for hover */
+      transition: all 0.4s ease-in-out;
+      transform: skewX(-20deg);
+    }
+
+    .link-button:hover::before {
+      left: 100%;
+    }
+
+    .link-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Social Link Colors - Brighter, more vibrant */
+    .instagram { background: linear-gradient(45deg, #F09433, #E6683C, #DC2743, #CC2366, #BC1888); }
+    .whatsapp { background: linear-gradient(45deg, #25D366, #1DBF71); }
+    .facebook { background: linear-gradient(45deg, #1877F2, #3B5998); }
+    .telegram { background: linear-gradient(45deg, #0088CC, #00A6DA); }
+    .linkedin { background: linear-gradient(45deg, #0A66C2, #0077B5); }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #aaaaaa;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="hassan_profile.jpg" alt="Hassan Ahmed Alsawak Profile Picture" />
+    <h1>Hassan Ahmed Alsawak</h1>
+    <p class="bio-line">MEP Engineer | Mechanical Engineer</p>
+    <p class="bio-line">Undergraduate | Trainee MEP & BIM</p>
+    <p class="bio-line">HVAC | Firefighting | Plumbing | Medical Gases</p>
+    <p class="bio-line">Freelancer | Mechanical Power Engineer</p>
+    <p class="bio-line">📞 +201208492138</p>
+
+    <a href="https://www.instagram.com/hassan.ahm.ed.123?utm_source=qr" class="link-button instagram" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+    <a href="https://wa.me/qr/CZOUEAOBWFJRI1" class="link-button whatsapp" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+    <a href="https://www.facebook.com/hassn.ah.79" class="link-button facebook" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
+    <a href="https://t.me/Hassanalsawak" class="link-button telegram" target="_blank" rel="noopener noreferrer">✈️ Telegram</a>
+    <a href="https://www.linkedin.com/in/hassan-alsawak-b90a692b5" class="link-button linkedin" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+
+    <div class="footer">© 2025 Hassan Ahmed Alsawak</div>
+  </div>
+</body>
+</html>
