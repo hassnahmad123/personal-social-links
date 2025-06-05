@@ -124,8 +124,8 @@
         }
 
         .email-link i {
-            margin-right: 5px; 
-            font-size: 0.6rem; 
+            margin-right: 5px; /* Adjusted space for smaller icon */
+            font-size: 0.6rem; /* Reduced icon font size proportionally */
         }
 
         .social-links {
@@ -185,7 +185,7 @@
             background-position: right center; /* Change gradient position on hover */
         }
         .btn-cv i {
-            margin-right: 10px; 
+            margin-right: 10px; /* Space between icon and text in CV button */
         }
 
         .footer {
@@ -207,10 +207,10 @@
 </head>
 <body>
     <div class="container">
-        <!-- Profile image updated to the provided LinkedIn URL -->
-        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGxdJ9Q_RCeYw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1711105431452?e=1754524800&v=beta&t=qRzIvjUQ4dUjDbEarAZI8lx9lNuWkI7z9c719ELw1J4" alt="Hassan Alsawak" class="profile-img" onerror="this.onerror=null;this.src='https://placehold.co/160x160/cccccc/333333?text=Image+Not+Found';">
+        <!-- Profile image with a placeholder and fallback -->
+        <img src="https://placehold.co/160x160/00fff7/0f0c29?text=HA" alt="Hassan Alsawak" class="profile-img" onerror="this.onerror=null;this.src='https://placehold.co/160x160/cccccc/333333?text=Image+Not+Found';">
 
-        <h1>Hassan Alsawak</h1> 
+        <h1>Hassan Alsawak</h1>
 
         <!-- Container for the animated job title -->
         <div class="typing-container">
@@ -226,17 +226,17 @@
             <i class="fas fa-envelope"></i>&nbsp;<span id="typed-email-text"></span><span id="email-cursor" class="cursor" style="display: none;">|</span>
         </a>
 
-        <!-- Social media links -->
+        <!-- Social media links - UPDATED -->
         <div class="social-links">
-            <a href="#" target="_blank" aria-label="Telegram" class="fab fa-telegram"></a>
-            <a href="#" target="_blank" aria-label="LinkedIn" class="fab fa-linkedin"></a>
-            <a href="#" target="_blank" aria-label="Instagram" class="fab fa-instagram"></a>
-            <a href="#" target="_blank" aria-label="WhatsApp" class="fab fa-whatsapp"></a>
-            <a href="#" target="_blank" aria-label="Facebook" class="fab fa-facebook"></a>
+            <a href="https://t.me/Hassanalsawak" target="_blank" aria-label="Telegram" class="fab fa-telegram"></a>
+            <a href="https://www.linkedin.com/in/hassan-alsawak-b90a692b5" target="_blank" aria-label="LinkedIn" class="fab fa-linkedin"></a>
+            <a href="https://www.instagram.com/hassan.ahm.ed.123" target="_blank" aria-label="Instagram" class="fab fa-instagram"></a>
+            <a href="https://wa.me/qr/CZOUEAOBWFJRI1" target="_blank" aria-label="WhatsApp" class="fab fa-whatsapp"></a>
+            <a href="https://www.facebook.com/hassn.ah.79" target="_blank" aria-label="Facebook" class="fab fa-facebook"></a>
         </div>
 
-        <!-- Download CV button - href updated to direct Google Drive download link -->
-        <a href="https://drive.google.com/uc?export=download&id=1zAiSu0sq7CHqRVZk2I7y2LN9_4Ee8G-z" class="btn-cv" download="Hassan_Alsawak_CV.pdf"> <!-- Added suggested filename -->
+        <!-- Download CV button -->
+        <a href="#" class="btn-cv" download> <!-- Add the actual link to your CV here in href="#" -->
             <i class="fas fa-download"></i> Download CV
         </a>
     </div>
@@ -255,15 +255,15 @@
         let titleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        const typingSpeed = 120; 
-        const deletingSpeed = 60; 
-        const delayBetweenTitles = 1200;
+        const typingSpeed = 120; // Slightly faster typing
+        const deletingSpeed = 60; // Slightly faster deleting
+        const delayBetweenTitles = 1200; // Pause after a word is fully typed
 
         // Function for the looping typewriter effect for job titles
         function typeAndEraseLoop() {
-            if (!titleTextElement || !titleCursorElement) return; 
+            if (!titleTextElement || !titleCursorElement) return; // Guard clause
 
-            titleCursorElement.style.display = 'inline-block'; 
+            titleCursorElement.style.display = 'inline-block'; // Ensure cursor is visible
 
             const currentTitle = titlesToType[titleIndex];
             
@@ -279,13 +279,16 @@
 
             // Determine next step in the animation
             if (!isDeleting && charIndex === currentTitle.length) {
+                // Word is fully typed, pause, then start deleting
                 isDeleting = true;
                 setTimeout(typeAndEraseLoop, delayBetweenTitles);
             } else if (isDeleting && charIndex === 0) {
+                // Word is fully deleted, move to the next word
                 isDeleting = false;
-                titleIndex = (titleIndex + 1) % titlesToType.length; 
+                titleIndex = (titleIndex + 1) % titlesToType.length; // Loop back to the start of titles array
                 setTimeout(typeAndEraseLoop, typingSpeed);
             } else {
+                // Continue typing or deleting
                 setTimeout(typeAndEraseLoop, isDeleting ? deletingSpeed : typingSpeed);
             }
         }
@@ -295,20 +298,21 @@
         const emailCursorElement = document.getElementById('email-cursor');
         const emailToType = "hassnahmad321@gmail.com";
         let currentEmailIndex = 0;
-        const emailTypingSpeed = 70; 
+        const emailTypingSpeed = 70; // Slightly faster email typing
 
         // Function to simulate typing effect for the email
         function typeEmailEffect() {
-            if (!emailTextElement || !emailCursorElement) return; 
+            if (!emailTextElement || !emailCursorElement) return; // Guard clause
             
-             emailCursorElement.style.display = 'inline-block'; 
+             emailCursorElement.style.display = 'inline-block'; // Show email cursor during typing
              
              if (currentEmailIndex < emailToType.length) {
                  emailTextElement.textContent += emailToType.charAt(currentEmailIndex);
                  currentEmailIndex++;
                  setTimeout(typeEmailEffect, emailTypingSpeed);
              } else {
-                 emailCursorElement.style.display = 'none'; 
+                 // Email typing finished
+                 emailCursorElement.style.display = 'none'; // Hide email cursor after completion
              }
         }
 
@@ -321,15 +325,19 @@
 
         // Start the typing animations when the window loads
         window.onload = function() {
+            // Ensure email cursor is initially hidden
             if (emailCursorElement) {
                 emailCursorElement.style.display = 'none';
             }
 
+            // Start title animation if elements exist
             if (titleTextElement && titleCursorElement) {
                  typeAndEraseLoop(); 
             }
             
+            // Start email animation if elements exist
             if (emailTextElement && emailCursorElement) {
+                // Delay email typing slightly to not overlap too much with title animation start
                 setTimeout(typeEmailEffect, 500); 
             }
         };
