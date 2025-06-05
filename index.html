@@ -1,141 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hassan Ahmed Alsawak - Digital Presence</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-gradient: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); /* Soft blue gradient */
-      --card-bg: #ffffff;
-      --text-color-dark: #222222;
-      --text-color-light: #555555;
-      --shadow-deep: 0 8px 30px rgba(0, 0, 0, 0.12);
-      --border-radius-xl: 20px;
-      --button-border-radius-md: 10px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hassan Alsawak | MEP Engineer</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--primary-gradient);
-      text-align: center;
-      padding: 30px 15px;
-      line-height: 1.6;
-      color: var(--text-color-dark);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-    }
-    .container {
-      max-width: 500px;
-      width: 100%;
-      margin: auto;
-      background: var(--card-bg);
-      padding: 35px;
-      border-radius: var(--border-radius-xl);
-      box-shadow: var(--shadow-deep);
-      box-sizing: border-box;
-      animation: fadeIn 1s ease-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    img {
-      border-radius: 50%;
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      margin-bottom: 25px;
-      border: 5px solid #ffffff; /* White border for emphasis */
-      box-shadow: 0 0 0 5px rgba(0, 128, 255, 0.1); /* Subtle blue halo effect */
-    }
-    h1 {
-      margin: 0 0 10px;
-      font-size: 28px;
-      color: var(--text-color-dark);
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    .bio-line {
-      margin: 6px 0;
-      color: var(--text-color-light);
-      font-size: 16px;
-      font-weight: 400;
-    }
-    .link-button {
-      display: block;
-      margin: 20px auto;
-      padding: 16px 25px;
-      width: 90%;
-      max-width: 400px;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: var(--button-border-radius-md);
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      font-size: 17px;
-      position: relative;
-      overflow: hidden; /* For hover effects */
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Animated gradient background */
+            background: linear-gradient(-45deg, #0d0a20, #4a3f90, #1f1d3a, #302b63);
+            background-size: 400% 400%;
+            animation: gradientBG 18s ease infinite;
+            color: #fff; /* Default text color */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 20px; /* Padding for smaller screens */
+        }
 
-    .link-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2); /* White overlay for hover */
-      transition: all 0.4s ease-in-out;
-      transform: skewX(-20deg);
-    }
+        /* Keyframes for the background gradient animation */
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-    .link-button:hover::before {
-      left: 100%;
-    }
+        .container {
+            background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for the container */
+            padding: 30px 40px;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 8px 32px rgba(0,0,0,0.37); /* Soft shadow */
+            backdrop-filter: blur(5px); /* Frosted glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.18); /* Subtle border */
+            max-width: 700px; /* Max width of the content container */
+            width: 90%; /* Responsive width */
+        }
 
-    .link-button:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    }
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%; /* Circular image */
+            object-fit: cover; /* Ensure image covers the area well */
+            border: 4px solid #00fff7; /* Neon cyan border */
+            box-shadow: 0 0 25px rgba(0, 255, 247, 0.5), 0 0 10px rgba(0, 255, 247, 0.3); /* Neon glow effect */
+            margin-bottom: 25px;
+            transition: transform 0.3s ease-out; /* Smooth transition for hover effect */
+        }
 
-    /* Social Link Colors - Brighter, more vibrant */
-    .instagram { background: linear-gradient(45deg, #F09433, #E6683C, #DC2743, #CC2366, #BC1888); }
-    .whatsapp { background: linear-gradient(45deg, #25D366, #1DBF71); }
-    .facebook { background: linear-gradient(45deg, #1877F2, #3B5998); }
-    .telegram { background: linear-gradient(45deg, #0088CC, #00A6DA); }
-    .linkedin { background: linear-gradient(45deg, #0A66C2, #0077B5); }
+        .profile-img:hover {
+            transform: scale(1.05) rotate(3deg); /* Slight zoom and rotation on hover */
+        }
 
-    .footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #aaaaaa;
-      font-weight: 400;
-    }
-  </style>
+        h1 {
+            font-size: 2.8rem; /* Large font size for the name */
+            color: #00fff7; /* Neon cyan color for the name */
+            text-shadow: 0 0 8px rgba(0, 255, 247, 0.7),
+                         0 0 12px rgba(0, 255, 247, 0.5),
+                         0 0 20px rgba(0, 255, 247, 0.3); /* Neon glow text shadow */
+            margin-bottom: 8px;
+        }
+
+        .typing-container { /* Container for the typing text (job title) */
+            font-size: 1.2rem;
+            margin: 15px 0 25px;
+            color: #c5c5ff; /* Light purple/blue color for subtitle */
+            height: 1.5em; /* Reserve space for text to avoid layout shift during typing */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p.bio {
+            font-size: 1rem;
+            line-height: 1.7; /* Improved readability for bio */
+            margin-bottom: 30px;
+            color: #e0e0e0; /* Light grey for bio text */
+            max-width: 550px; /* Optimal width for reading */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .email-link {
+            display: flex; /* Using flex to align icon and text */
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto 30px; /* Center the link */
+            font-size: 0.5rem; /* Reduced font size by half */
+            color: #00fff7;
+            text-decoration: none;
+            padding: 7px 12px; /* Adjusted padding for smaller font */
+            border: 1px solid #00fff7;
+            border-radius: 25px; /* Pill shape */
+            width: fit-content; /* Adjust width to content */
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            max-width: 90%; /* Ensure it doesn't overflow on small screens */
+            overflow-wrap: break-word; /* Break long email addresses */
+            word-break: break-all; /* Ensure word break for long emails */
+            min-height: 1.3em; /* Adjusted min-height */
+        }
+
+        .email-link:hover {
+            background-color: #00fff7;
+            color: #0f0c29; /* Dark background color for contrast on hover */
+            box-shadow: 0 0 15px #00fff7; /* Glow effect on hover */
+        }
+
+        .email-link i {
+            margin-right: 5px; 
+            font-size: 0.6rem; 
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
+            justify-content: center;
+            gap: 18px; /* Space between social media icons */
+            margin-bottom: 35px;
+        }
+
+        .social-links a {
+            color: #c5c5ff; /* Default color for social icons */
+            font-size: 1.8rem; /* Size of social icons */
+            width: 55px; /* Fixed width for icon container */
+            height: 55px; /* Fixed height for icon container */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 50%; /* Circular shape for icon container */
+            border: 2px solid transparent; /* Transparent border initially */
+            transition: color 0.3s ease, transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1); /* Icon lifts and scales on hover */
+            border-color: currentColor; /* Border color matches icon color on hover */
+            box-shadow: 0 0 12px currentColor; /* Glow effect matching icon color */
+        }
+
+        /* Specific hover colors for each social icon */
+        .social-links .fa-telegram:hover { color: #2AABEE; }
+        .social-links .fa-linkedin:hover { color: #0A66C2; }
+        .social-links .fa-instagram:hover { color: #E4405F; }
+        .social-links .fa-whatsapp:hover { color: #25D366; }
+        .social-links .fa-facebook:hover { color: #1877F2; }
+
+
+        .btn-cv {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(45deg, #7b2ff7, #f107a3); /* Gradient background for CV button */
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.05rem;
+            border: none;
+            border-radius: 30px; /* Rounded button */
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s, background-position 0.5s;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25); /* Button shadow */
+            background-size: 200% auto; /* For gradient animation on hover */
+        }
+
+        .btn-cv:hover {
+            transform: translateY(-4px) scale(1.05); /* Button lifts and scales on hover */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3), 0 0 20px #f107a3; /* Enhanced shadow and glow on hover */
+            background-position: right center; /* Change gradient position on hover */
+        }
+        .btn-cv i {
+            margin-right: 10px; 
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6); /* Lighter color for footer text */
+        }
+        .cursor { /* Style for the typing cursor */
+            display: inline-block;
+            animation: blink 0.7s infinite;
+            color: #00fff7; /* Match neon color for visibility */
+            font-weight: bold; /* Make cursor more visible */
+        }
+        @keyframes blink { /* Animation for the typing cursor */
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <img src="hassan_profile.jpg" alt="Hassan Ahmed Alsawak Profile Picture" />
-    <h1>Hassan Ahmed Alsawak</h1>
-    <p class="bio-line">MEP Engineer | Mechanical Engineer</p>
-    <p class="bio-line">Undergraduate | Trainee MEP & BIM</p>
-    <p class="bio-line">HVAC | Firefighting | Plumbing | Medical Gases</p>
-    <p class="bio-line">Freelancer | Mechanical Power Engineer</p>
-    <p class="bio-line">📞 +201208492138</p>
+    <div class="container">
+        <!-- Profile image updated to the provided LinkedIn URL -->
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGxdJ9Q_RCeYw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1711105431452?e=1754524800&v=beta&t=qRzIvjUQ4dUjDbEarAZI8lx9lNuWkI7z9c719ELw1J4" alt="Hassan Alsawak" class="profile-img" onerror="this.onerror=null;this.src='https://placehold.co/160x160/cccccc/333333?text=Image+Not+Found';">
 
-    <a href="https://www.instagram.com/hassan.ahm.ed.123?utm_source=qr" class="link-button instagram" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
-    <a href="https://wa.me/qr/CZOUEAOBWFJRI1" class="link-button whatsapp" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
-    <a href="https://www.facebook.com/hassn.ah.79" class="link-button facebook" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
-    <a href="https://t.me/Hassanalsawak" class="link-button telegram" target="_blank" rel="noopener noreferrer">✈️ Telegram</a>
-    <a href="https://www.linkedin.com/in/hassan-alsawak-b90a692b5" class="link-button linkedin" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+        <h1>Hassan Alsawak</h1> 
 
-    <div class="footer">© 2025 Hassan Ahmed Alsawak</div>
-  </div>
+        <!-- Container for the animated job title -->
+        <div class="typing-container">
+            <span id="typed-text"></span><span id="title-cursor" class="cursor">|</span>
+        </div>
+
+        <p class="bio">
+            I'm Hassan Ahmed, a passionate Mechanical Power Engineer specializing in MEP systems (HVAC, Firefighting, Plumbing, and Medical Gases), blending practical training with BIM tools and freelance experience.
+        </p>
+
+        <!-- Email link with typing animation -->
+        <a href="mailto:hassnahmad321@gmail.com" class="email-link">
+            <i class="fas fa-envelope"></i>&nbsp;<span id="typed-email-text"></span><span id="email-cursor" class="cursor" style="display: none;">|</span>
+        </a>
+
+        <!-- Social media links -->
+        <div class="social-links">
+            <a href="#" target="_blank" aria-label="Telegram" class="fab fa-telegram"></a>
+            <a href="#" target="_blank" aria-label="LinkedIn" class="fab fa-linkedin"></a>
+            <a href="#" target="_blank" aria-label="Instagram" class="fab fa-instagram"></a>
+            <a href="#" target="_blank" aria-label="WhatsApp" class="fab fa-whatsapp"></a>
+            <a href="#" target="_blank" aria-label="Facebook" class="fab fa-facebook"></a>
+        </div>
+
+        <!-- Download CV button - href updated to direct Google Drive download link -->
+        <a href="https://drive.google.com/uc?export=download&id=1zAiSu0sq7CHqRVZk2I7y2LN9_4Ee8G-z" class="btn-cv" download="Hassan_Alsawak_CV.pdf"> <!-- Added suggested filename -->
+            <i class="fas fa-download"></i> Download CV
+        </a>
+    </div>
+
+    <footer class="footer">
+        &copy; <span id="currentYear"></span> Hassan Alsawak
+    </footer>
+
+    <script>
+        // --- SCRIPT FOR TYPING ANIMATIONS AND DYNAMIC YEAR ---
+
+        // Elements for title typing animation
+        const titleTextElement = document.getElementById('typed-text');
+        const titleCursorElement = document.getElementById('title-cursor');
+        const titlesToType = ["Mechanical Power Engineer", "MEP Engineer", "BIM Engineer"];
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 120; 
+        const deletingSpeed = 60; 
+        const delayBetweenTitles = 1200;
+
+        // Function for the looping typewriter effect for job titles
+        function typeAndEraseLoop() {
+            if (!titleTextElement || !titleCursorElement) return; 
+
+            titleCursorElement.style.display = 'inline-block'; 
+
+            const currentTitle = titlesToType[titleIndex];
+            
+            if (isDeleting) {
+                // Deleting characters
+                titleTextElement.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                // Typing characters forward
+                titleTextElement.textContent = currentTitle.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            // Determine next step in the animation
+            if (!isDeleting && charIndex === currentTitle.length) {
+                isDeleting = true;
+                setTimeout(typeAndEraseLoop, delayBetweenTitles);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                titleIndex = (titleIndex + 1) % titlesToType.length; 
+                setTimeout(typeAndEraseLoop, typingSpeed);
+            } else {
+                setTimeout(typeAndEraseLoop, isDeleting ? deletingSpeed : typingSpeed);
+            }
+        }
+
+        // Elements for email typing animation
+        const emailTextElement = document.getElementById('typed-email-text');
+        const emailCursorElement = document.getElementById('email-cursor');
+        const emailToType = "hassnahmad321@gmail.com";
+        let currentEmailIndex = 0;
+        const emailTypingSpeed = 70; 
+
+        // Function to simulate typing effect for the email
+        function typeEmailEffect() {
+            if (!emailTextElement || !emailCursorElement) return; 
+            
+             emailCursorElement.style.display = 'inline-block'; 
+             
+             if (currentEmailIndex < emailToType.length) {
+                 emailTextElement.textContent += emailToType.charAt(currentEmailIndex);
+                 currentEmailIndex++;
+                 setTimeout(typeEmailEffect, emailTypingSpeed);
+             } else {
+                 emailCursorElement.style.display = 'none'; 
+             }
+        }
+
+        // Set the current year in the footer
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+        
+
+        // Start the typing animations when the window loads
+        window.onload = function() {
+            if (emailCursorElement) {
+                emailCursorElement.style.display = 'none';
+            }
+
+            if (titleTextElement && titleCursorElement) {
+                 typeAndEraseLoop(); 
+            }
+            
+            if (emailTextElement && emailCursorElement) {
+                setTimeout(typeEmailEffect, 500); 
+            }
+        };
+    </script>
 </body>
 </html>
