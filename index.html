@@ -103,10 +103,10 @@
             align-items: center;
             justify-content: center;
             margin: 20px auto 30px; /* Center the link */
-            font-size: 0.5rem; /* Reduced font size by half */
+            font-size: 1rem; /* Increased font size for readability */
             color: #00fff7;
             text-decoration: none;
-            padding: 7px 12px; /* Adjusted padding for smaller font */
+            padding: 10px 20px; /* Adjusted padding for larger font */
             border: 1px solid #00fff7;
             border-radius: 25px; /* Pill shape */
             width: fit-content; /* Adjust width to content */
@@ -114,7 +114,6 @@
             max-width: 90%; /* Ensure it doesn't overflow on small screens */
             overflow-wrap: break-word; /* Break long email addresses */
             word-break: break-all; /* Ensure word break for long emails */
-            min-height: 1.3em; /* Adjusted min-height */
         }
 
         .email-link:hover {
@@ -124,8 +123,8 @@
         }
 
         .email-link i {
-            margin-right: 5px; /* Adjusted space for smaller icon */
-            font-size: 0.6rem; /* Reduced icon font size proportionally */
+            margin-right: 8px;
+            font-size: 1.1rem;
         }
 
         .social-links {
@@ -162,7 +161,6 @@
         .social-links .fa-instagram:hover { color: #E4405F; }
         .social-links .fa-whatsapp:hover { color: #25D366; }
         .social-links .fa-facebook:hover { color: #1877F2; }
-
 
         .btn-cv {
             display: inline-block;
@@ -235,8 +233,8 @@
             <a href="https://www.facebook.com/hassn.ah.79" target="_blank" aria-label="Facebook" class="fab fa-facebook"></a>
         </div>
 
-        <!-- Download CV button -->
-        <a href="#" class="btn-cv" download> <!-- Add the actual link to your CV here in href="#" -->
+        <!-- Download CV button - UPDATED with direct download link -->
+        <a href="" class="btn-cv" download="Hassan_Alsawak_CV.pdf">
             <i class="fas fa-download"></i> Download CV
         </a>
     </div>
@@ -304,16 +302,16 @@
         function typeEmailEffect() {
             if (!emailTextElement || !emailCursorElement) return; // Guard clause
             
-             emailCursorElement.style.display = 'inline-block'; // Show email cursor during typing
-             
-             if (currentEmailIndex < emailToType.length) {
-                 emailTextElement.textContent += emailToType.charAt(currentEmailIndex);
-                 currentEmailIndex++;
-                 setTimeout(typeEmailEffect, emailTypingSpeed);
-             } else {
-                 // Email typing finished
-                 emailCursorElement.style.display = 'none'; // Hide email cursor after completion
-             }
+              emailCursorElement.style.display = 'inline-block'; // Show email cursor during typing
+              
+              if (currentEmailIndex < emailToType.length) {
+                  emailTextElement.textContent += emailToType.charAt(currentEmailIndex);
+                  currentEmailIndex++;
+                  setTimeout(typeEmailEffect, emailTypingSpeed);
+              } else {
+                  // Email typing finished
+                  emailCursorElement.style.display = 'none'; // Hide email cursor after completion
+              }
         }
 
         // Set the current year in the footer
@@ -332,7 +330,7 @@
 
             // Start title animation if elements exist
             if (titleTextElement && titleCursorElement) {
-                 typeAndEraseLoop(); 
+                typeAndEraseLoop(); 
             }
             
             // Start email animation if elements exist
